@@ -1,7 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="index3.html" class="brand-link">
-    <img src="assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <img src="assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      style="opacity: .8">
     <span class="brand-text font-weight-light">Admin-Spring</span>
   </a>
 
@@ -45,19 +46,19 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a [routerLink]="['/clientes/listado']" routerLinkActive="router-link-active"  class="nav-link">
+              <a [routerLink]="['/clientes/pagina/0']" routerLinkActive="router-link-active" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Listado</p>
               </a>
             </li>
             <li class="nav-item">
-              <a [routerLink]="['/clientes/registrar']" routerLinkActive="router-link-active"  class="nav-link">
+              <a [routerLink]="['/clientes/registrar']" routerLinkActive="router-link-active" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Registrar</p>
               </a>
             </li>
             <li class="nav-item">
-              <a [routerLink]="['/clientes/buscar']" routerLinkActive="router-link-active"  class="nav-link">
+              <a [routerLink]="['/clientes/buscar']" routerLinkActive="router-link-active" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Buscar cliente</p>
               </a>
@@ -68,71 +69,21 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-book"></i>
             <p>
-              Pages
+              Catalogo
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
+
             <li class="nav-item">
-              <a href="pages/examples/invoice.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Invoice</p>
+              <a [routerLink]="['/paises/listado']" routerLinkActive="active"  class="nav-link">
+                <i class="nav-icon fas fa-flag"></i>
+                <p>
+                  Paises
+                </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="pages/examples/profile.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Profile</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/examples/e-commerce.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>E-commerce</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/examples/projects.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Projects</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/examples/project-add.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Project Add</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/examples/project-edit.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Project Edit</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/examples/project-detail.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Project Detail</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/examples/contacts.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Contacts</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/examples/faq.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>FAQ</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/examples/contact-us.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Contact us</p>
-              </a>
-            </li>
+
           </ul>
         </li>
 

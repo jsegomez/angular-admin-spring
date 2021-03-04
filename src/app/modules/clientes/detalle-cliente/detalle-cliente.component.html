@@ -1,0 +1,96 @@
+<div class="container animate__animated animate__fadeIn">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+      <div class="card" *ngIf="cliente != null">
+        <div class="card-custom">
+            <div class="py-1">
+              <b>Detalles cliente:</b> {{ cliente.nombre }} {{ cliente.apellido }}
+            </div>
+
+            <button class="btn btn-danger btn-sm" (click)="deleteById(cliente.id)">
+              <i class="fas fa-user-times mr-1"></i>
+              Eliminar cliente
+            </button>
+        </div>
+
+        <div class="card-body">
+          <div class="row justify-content-around align-items-center my-3">
+
+            <!-- ===================== Fragmento carga de imagen =====================-->
+            <div class="col-12 col-md-6 col-lg-5 cuadro-imagen" align="center">
+              <img src="assets/dist/img/avatar.png" alt="" class="img-thumbnail img-custom" *ngIf="!cliente.imagen">
+              <img [src]="urlImagen + '/' + cliente.imagen" alt="" class="img-thumbnail img-custom" *ngIf="cliente.imagen">
+
+              <div class="mt-1 animate__animated animate__fadeIn" *ngIf="boolMostrarBtn == false">
+                <button class="btn btn-primary btn-sm" (click)="mostrarInput()">
+                  Cambiar imagen
+                </button>
+              </div>
+
+              <div class="text-justify mt-1 animate__animated animate__fadeIn" *ngIf="boolMostrarBtn">
+
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" (change)="imagenSeleccionada($event)">
+                    <label class="custom-file-label">{{ mensajeImagen }}</label>
+                  </div>
+                </div>
+
+                <div class="mt-1">
+                  <button class="btn btn-primary btn-sm" (click)="cargaImagen()" [disabled]="boolCarga">Cargar</button>
+                  <button class="btn btn-danger btn-sm ml-1" (click)="mostrarInput()">Cancelar</button>
+                </div>
+
+                <div *ngIf="progreso > 0" class="mt-1 animate__animated animate__fadeIn">
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" [style.width]="progreso + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ progreso }}%</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- ===================== Fragmento para formulario =====================-->
+            <div class="col-12 col-md-6 col-lg-5">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">Id</th>
+                    <td>{{ cliente.id }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Nombres</th>
+                    <td>{{ cliente.nombre }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Apellidos</th>
+                    <td>{{ cliente.apellido }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Correo</th>
+                    <td>{{ cliente.email }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fecha de registro</th>
+                    <td>{{ cliente.createAt | date: 'dd/MM/yyyy' }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row mt-4 justify-content-center">
+            <div class="col-12 col-md-4 col-lg-3" align="center">
+              <button class="btn btn-primary btn-block mx-3" [routerLink]="['/clientes']">Regresar</button>
+            </div>
+
+            <div class="col-12 col-md-4 col-lg-3 mt-2 mt-sm-2 mt-md-0" align="center" *ngIf="cliente.id">
+              <button class="btn btn-danger btn-block mx-3" [routerLink]="['/clientes/actualizar/' + cliente.id]">Modificar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

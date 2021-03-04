@@ -4,17 +4,20 @@ import { Routes, RouterModule } from '@angular/router';
 // Componentes
 import { MainClientesComponent } from './main-clientes/main-clientes.component';
 import { ListadoClientesComponent } from './listado-clientes/listado-clientes.component';
-import { RegistarClienteComponent } from './registar-cliente/registar-cliente.component';
 import { BuscarClienteComponent } from './buscar-cliente/buscar-cliente.component';
+import { DetalleClienteComponent } from './detalle-cliente/detalle-cliente.component';
+import { RegistrarClienteComponent } from './registrar-cliente/registrar-cliente.component';
 
 const routes: Routes = [
   {
     path: 'clientes',
     component: MainClientesComponent,
     children: [
-      {path: 'listado',   component: ListadoClientesComponent   },
-      {path: 'registrar', component: RegistarClienteComponent   },
-      {path: 'buscar',    component: BuscarClienteComponent     },
+      {path: 'pagina/:numero',  component: ListadoClientesComponent   },
+      {path: 'registrar',               component: RegistrarClienteComponent  },
+      {path: 'detalle/:id',             component: DetalleClienteComponent    },
+      {path: 'actualizar/:id',          component: RegistrarClienteComponent  },
+      {path: 'buscar',                  component: BuscarClienteComponent     },
     ]
   }
 ];

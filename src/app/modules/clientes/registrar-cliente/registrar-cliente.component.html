@@ -1,0 +1,82 @@
+<div class="container animate__animated animate__fadeIn">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <div class="card card-secondary card">
+        <div class="card-header">
+          <h3 class="card-title">Registrar cliente</h3>
+        </div>
+
+        <form autocomplete="off" [formGroup]="formRegistroCliente" autocomplete="off">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label for="nombre">Nombres</label>
+              <input
+                type="text" class="form-control" id="nombre" placeholder="Nombres" formControlName="nombre"
+                [ngClass]="{'border-danger animate__animated animate__headShake': campoInvalido('nombre')}"
+              >
+              <small class="text-danger" *ngIf="campoInvalido('nombre')">
+                Nombre debe tener un mínimo de 2 caracteres
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="apellido">Apellido</label>
+              <input
+                type="text" class="form-control" id="apellido" placeholder="Apellidos" formControlName="apellido"
+                [ngClass]="{'border-danger animate__animated animate__headShake': campoInvalido('apellido')}"
+              >
+              <small class="text-danger" *ngIf="campoInvalido('apellido')">
+                Apellido debe tener un mínimo de 2 caracteres
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input
+                type="email" class="form-control" id="email" placeholder="Email" formControlName="email"
+                [ngClass]="{'border-danger animate__animated animate__headShake': campoInvalido('email')}"
+              >
+              <small class="text-danger" *ngIf="campoInvalido('email')">
+                Ingrese un correo electrónico valido
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Fecha de registro</label>
+              <input
+                type="date" class="form-control" id="createAt" placeholder="Fecha registro" formControlName="createAt"
+                [ngClass]="{'border-danger animate__animated animate__headShake': campoInvalido('createAt')}"
+              >
+              <small class="text-danger" *ngIf="campoInvalido('createAt')">
+                Favor ingrese la fecha de registro
+              </small>
+            </div>
+
+          </div>
+
+          <div class="card-footer">
+            <button
+              type="submit" class="btn btn-secondary mr-2"
+              (click)="registrarCliente()" *ngIf="cliente == null"
+            >Registrar</button>
+
+            <button
+              type="submit" class="btn btn-secondary mr-2"
+              (click)="actualizarCliente()" *ngIf="cliente != null"
+            >Actualizar</button>
+
+            <a [routerLink]="['/clientes/detalle', cliente.id]" class="btn btn-danger" *ngIf="cliente != null">
+              Cancelar
+            </a>
+
+            <a [routerLink]="['/clientes/']" class="btn btn-danger" *ngIf="cliente == null">
+              Cancelar
+            </a>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

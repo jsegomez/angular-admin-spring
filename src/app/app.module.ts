@@ -1,7 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
+// Configurando region de nuestra aplicación
+import localeES from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeES, 'es');
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -14,6 +19,7 @@ import { SharedModule } from './modules/shared/shared.module';
 import { ClientesModule } from './modules/clientes/clientes.module';
 import { ProductosModule } from './modules/productos/productos.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { PaisesModule } from './modules/paises/paises.module';
 
 @NgModule({
   declarations: [
@@ -27,9 +33,10 @@ import { AuthModule } from './modules/auth/auth.module';
     AuthModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    PaisesModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'es-ES' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
