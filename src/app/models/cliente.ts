@@ -1,3 +1,5 @@
+import { Pais } from "./Pais.interface";
+
 export interface Cliente {
   cliente: ClienteClass;
   mensaje: string;
@@ -9,5 +11,6 @@ export interface ClienteClass {
   apellido: string;
   email:    string;
   createAt: Date;
-  imagen?:   string;
+  pais?:    Pais | null;
+  imagen?:  null | string;
 }

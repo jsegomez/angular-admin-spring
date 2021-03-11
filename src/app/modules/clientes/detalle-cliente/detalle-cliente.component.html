@@ -52,7 +52,7 @@
 
             <!-- ===================== Fragmento para formulario =====================-->
             <div class="col-12 col-md-6 col-lg-5">
-              <table class="table">
+              <table class="table" *ngIf="cliente">
                 <tbody>
                   <tr>
                     <th scope="row">Id</th>
@@ -69,6 +69,10 @@
                   <tr>
                     <th scope="row">Correo</th>
                     <td>{{ cliente.email }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">País</th>
+                    <td>{{ cliente.pais.nombre }}</td>
                   </tr>
                   <tr>
                     <th scope="row">Fecha de registro</th>

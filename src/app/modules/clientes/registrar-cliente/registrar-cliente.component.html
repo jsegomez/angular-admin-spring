@@ -43,6 +43,17 @@
             </div>
 
             <div class="form-group">
+              <label for="email">País</label>
+              <div class="form-group">
+                <select class="form-control" [compareWith]="compararRegion" formControlName="pais" placeholder="Seleccionar">
+                  <option *ngFor="let pais of paises" [ngValue]="pais">
+                    {{ pais.nombre }}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
               <label for="email">Fecha de registro</label>
               <input
                 type="date" class="form-control" id="createAt" placeholder="Fecha registro" formControlName="createAt"

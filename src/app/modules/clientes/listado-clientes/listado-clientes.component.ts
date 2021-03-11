@@ -18,7 +18,7 @@ export class ListadoClientesComponent implements OnInit {
   ) { }
 
   // ========================= Variables del componente ===================
-  clientes: any[] = [];
+  clientes: ClienteClass[] = [];
   totalPaginas: number = 0;
   primeraPagina: boolean = false;
   ultimaPagina: boolean = false;

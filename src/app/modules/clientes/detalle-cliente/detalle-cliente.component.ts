@@ -37,7 +37,10 @@ export class DetalleClienteComponent implements OnInit {
         const idRuta = params.id;
         if(idRuta != null){
           this.servicioCliente.getClienteById(idRuta).subscribe(
-            response => this.cliente = response
+            response => {
+              this.cliente = response;
+              console.log(response)
+            }
           )
         }
       }
