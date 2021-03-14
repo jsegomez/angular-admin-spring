@@ -22,7 +22,7 @@ export class ListadoClientesComponent implements OnInit {
   totalPaginas: number = 0;
   primeraPagina: boolean = false;
   ultimaPagina: boolean = false;
-  urlImage: string = 'http://localhost:8080/api/image/';
+  urlImage: string = 'http://localhost:8080/api/image';
 
   ngOnInit(): void {
     this.getClientes();
