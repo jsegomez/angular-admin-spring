@@ -23,7 +23,7 @@ import { PaisesModule } from './modules/paises/paises.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

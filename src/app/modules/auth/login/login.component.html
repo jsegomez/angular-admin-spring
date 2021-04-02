@@ -8,13 +8,18 @@
       <div class="card-body login-card-body">
         <p class="login-box-msg">Iniciar sesión</p>
 
-        <form [formGroup]="formLogin" autocomplete="off">
+        <form [formGroup]="formLogin" (ngSubmit)="login()" autocomplete="off">
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Usuario" formControlName="username">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
               </div>
+            </div>
+            <div class="col-12 input-login">
+              <p class="p-0 m-0 text-danger animate__animated animate__fadeInDown" *ngIf="campoNoValido('username')">
+                Favor ingrese su usuario
+              </p>
             </div>
           </div>
           <div class="input-group mb-3">
@@ -23,6 +28,11 @@
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
               </div>
+            </div>
+            <div class="col-12 input-login">
+              <p class="p-0 m-0 text-danger animate__animated animate__fadeInDown" *ngIf="campoNoValido('password')">
+                Favor ingrese su contraseña
+              </p>
             </div>
           </div>
           <div class="row">
@@ -36,7 +46,7 @@
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button [routerLink]="['/clientes']" type="submit" class="btn btn-primary btn-block">Iniciar</button>
+              <button type="submit" class="btn btn-primary btn-block">Iniciar</button>
             </div>
             <!-- /.col -->
           </div>
